@@ -30,6 +30,7 @@ Niñez y Adolescencia, y Decreto N° 12.
 index.html      # la página completa, con el CSS embebido
 assets/         # logos OLN, I. Municipalidad de Natales, UER y UMAG
 .nojekyll       # sirve los archivos tal cual, sin procesamiento Jekyll
+README.md       # este archivo
 ```
 
 Sin dependencias ni build. La única carga externa es la tipografía **Asap** (oficial UMAG)
@@ -42,11 +43,17 @@ marca municipal. El violeta UMAG `#593D80` queda reservado a la mención de la U
 
 ## Trabajar en el sitio
 
+El repositorio es a la vez la carpeta de trabajo: se edita y se publica en el mismo
+lugar, sin build ni servidor.
+
 ```bash
-open index.html          # ver los cambios localmente
+open index.html          # revisar los cambios localmente, antes de publicar
 git add -A && git commit -m "…"
 git push                 # GitHub Pages republica solo, en ~1 minuto
 ```
+
+La revisión se hace siempre sobre el archivo local. La URL publicada muestra la última
+versión difundida, no el trabajo en curso.
 
 ## Origen del contenido
 
@@ -56,22 +63,28 @@ compartida de Drive `UMAG/01_Proyectos/OLN-Natales/`:
 | Sección | Fuente |
 | --- | --- |
 | De dónde viene, actores, marco legal, hitos | `CLAUDE.md` |
-| Módulos M0–M4 y pregunta de cierre | `Cuestionario_Final/CLAUDE.md` |
-| Objetivo general y específicos, tramos y versiones | `Presentacion_EncuestaCIAN.pptx` |
-| 16 instrumentos revisados (7 chilenos, 9 internacionales) | `Presentacion_EncuestaCIAN.pptx` |
+| Módulos M0–M4 y pregunta de cierre | `Cuestionario_CIAN/Cuestionario_Final/Cuestionario_CIAN_final.md` |
+| Objetivo general y específicos, tramos y versiones | `informes_presentaciones/Presentacion_cuestionario_v263107.md` |
+| 16 instrumentos revisados | `Referencias/estudios_referencia.md` |
 | Qué es la OLN, qué es el CIAN, contacto y ubicación | portal.muninatales.cl/oln/ |
-| Cómo se responde | `metodo_cuestionario.md` §§2, 5 |
+| Cómo se responde | `Cuestionario_CIAN/metodo_cuestionario.md` §§2, 5 |
 | Tus derechos | `metodo_cuestionario.md` §4 y `manual_supervisor.md` |
 
-## Duración declarada
+La ficha de referencias tiene 17 entradas numeradas, pero la 4 y la 16 son dos ediciones
+del mismo Barómetro de UNICEF España: **son 16 instrumentos distintos**, que es la cifra
+que muestra la página.
 
-La página declara **10 a 15 minutos**, cifra acordada el 2026-09-09 y aplicada también a
-la pantalla de presentación del cuestionario (DOCX, XLSForm y Markdown) y al guion del
-manual del supervisor. Los tres artefactos de comunicación dicen ahora lo mismo.
+## Estado del proyecto
 
-Queda una brecha abierta con la estimación técnica: `metodo_cuestionario.md` §3 estima
-15–20 min para el tramo 10–13 y 25–30 min para el 14–17, y el instrumento vigente presenta
-24 preguntas a ambos tramos porque la ramificación por `tramo` no está implementada
-(pendientes 1 y 2 de `Cuestionario_Final/CLAUDE.md`). Se cierra reduciendo preguntas para
-el tramo menor, no estirando el tiempo. El piloto con 5–10 NNA confirma la cifra final; si
-supera los 15 minutos, hay que corregir esta página, el cuestionario y el manual.
+Al **10 de septiembre de 2026**, el cuestionario está en revisión por el CIAN y la OLN.
+El calendario acordado es:
+
+| Etapa | Cuándo |
+| --- | --- |
+| Cierre del instrumento y piloto con 5–10 NNA | Septiembre 2026 |
+| Aplicación en los establecimientos | Septiembre–octubre 2026 |
+| Análisis de resultados | Octubre–noviembre 2026 |
+| Presentación y discusión con el CIAN | Noviembre 2026 |
+
+Las fechas de aplicación las coordina la OLN con cada establecimiento; mientras no estén
+confirmadas, la página no las anuncia.
