@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encuesta CIAN</title>
+<meta name="description" content="La encuesta que el Consejo Consultivo de Niños, Niñas y Adolescentes de Natales pidió para su comuna. Qué pregunta, cómo se responde y cuáles son tus derechos.">
+<meta name="theme-color" content="#4A3070">
+<meta property="og:title" content="Encuesta CIAN — Puerto Natales">
+<meta property="og:description" content="Una encuesta hecha con el Consejo Consultivo de Niños, Niñas y Adolescentes de Natales.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,800;1,500&family=Asap+Condensed:wght@600;700&display=swap">
+<style>
+/* ============================================================
+   Encuesta CIAN — UER-UMAG + OLN Natales
+   Paleta: Breve Manual de Normas Gráficas UMAG
+   ============================================================ */
+
+:root{
+  /* superficies claras */
+  --papel:        #F5F3F8;
+  --papel-2:      #EAE6F2;
+  --superficie:   #FFFFFF;
+  --linea:        #D9D3E6;
+
+  /* tinta */
+  --tinta:        #1A1625;
+  --tinta-suave:  #4C4463;
+
+  /* marca UMAG */
+  --violeta:      #593D80;
+  --azul:         #4A5CAB;
+
+  /* acento UER */
+  --naranja:      #C96A47;
+  --naranja-viva: #E69055;
+
+  /* Última Esperanza */
+  --fiordo:       #16636F;
+
+  /* bandas de color a sangre */
+  --banda-violeta:#4A3070;
+  --banda-fiordo: #14636F;
+
+  --sombra: 0 1px 2px rgba(26,22,37,.06), 0 8px 24px rgba(26,22,37,.07);
+
+  /* tipografía */
+  --display: "Asap", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --dato:    "Asap Condensed", "Asap", "Arial Narrow", Arial, sans-serif;
+
+  --t-display: clamp(2.35rem, 8.6vw, 4.5rem);
+  --t-h2:      clamp(1.65rem, 5vw, 2.5rem);
+  --t-h3:      clamp(1.1rem, 2.6vw, 1.3rem);
+  --t-body:    clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  --t-lead:    clamp(1.15rem, 1.02rem + 0.7vw, 1.45rem);
+
+  --ancho:     min(100% - 2.5rem, 62rem);
+  --prosa:     34rem;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papel:        #14111C;
+    --papel-2:      #1D1929;
+    --superficie:   #201B2E;
+    --linea:        #352E48;
+    --tinta:        #EEEAF6;
+    --tinta-suave:  #ABA2C2;
+    --violeta:      #A98BD4;
+    --azul:         #8B9AE0;
+    --naranja:      #E69055;
+    --naranja-viva: #F0A874;
+    --fiordo:       #5FBCC9;
+    --banda-violeta:#2C1D45;
+    --banda-fiordo: #0D414A;
+    --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --papel:        #14111C;
+  --papel-2:      #1D1929;
+  --superficie:   #201B2E;
+  --linea:        #352E48;
+  --tinta:        #EEEAF6;
+  --tinta-suave:  #ABA2C2;
+  --violeta:      #A98BD4;
+  --azul:         #8B9AE0;
+  --naranja:      #E69055;
+  --naranja-viva: #F0A874;
+  --fiordo:       #5FBCC9;
+  --banda-violeta:#2C1D45;
+  --banda-fiordo: #0D414A;
+  --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+
+body{
+  margin:0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--display);
+  font-size: var(--t-body);
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+a{ color: var(--naranja); text-underline-offset:.18em; text-decoration-thickness:.08em; }
+
+:focus-visible{
+  outline:3px solid var(--naranja-viva);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- estructura ---------- */
+
+.franja{ padding: clamp(3.25rem, 9vw, 6rem) 0; }
+.franja--papel2{ background: var(--papel-2); }
+.franja--violeta{
+  background: var(--banda-violeta);
+  --sobre: #F6F3FB;
+  --sobre-suave: #CFC3E6;
+  --sobre-linea: rgba(246,243,251,.22);
+  color: var(--sobre);
+}
+.franja--fiordo{
+  background: var(--banda-fiordo);
+  --sobre: #F1FAFB;
+  --sobre-suave: #A8CFD6;
+  --sobre-linea: rgba(241,250,251,.24);
+  color: var(--sobre);
+}
+
+.envoltura{ width: var(--ancho); margin-inline:auto; }
+
+.rotulo{
+  font-family: var(--dato);
+  font-weight:700;
+  font-size:.8125rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color: var(--naranja);
+  margin:0 0 .9rem;
+}
+.franja--violeta .rotulo,
+.franja--fiordo  .rotulo{ color: var(--naranja-viva); }
+
+h1,h2,h3{ text-wrap:balance; margin:0; font-weight:800; line-height:1.08; letter-spacing:-.015em; }
+h2{ font-size: var(--t-h2); }
+h3{ font-size: var(--t-h3); line-height:1.25; letter-spacing:-.005em; }
+
+p{ margin:0; }
+.prosa{ max-width: var(--prosa); display:flex; flex-direction:column; gap:1.1rem; }
+.prosa--ancha{ max-width: 44rem; }
+
+.tenue{ color: var(--tinta-suave); }
+.franja--violeta .tenue,
+.franja--fiordo  .tenue{ color: var(--sobre-suave); }
+
+/* ---------- barra superior ---------- */
+
+.barra{
+  background: var(--banda-violeta);
+  color:#F6F3FB;
+  padding:.85rem 0;
+  border-bottom:1px solid rgba(246,243,251,.15);
+}
+.barra__int{
+  width: var(--ancho); margin-inline:auto;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.barra__marca{
+  font-family: var(--dato); font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; font-size:.78rem;
+  color:#CFC3E6;
+}
+.barra__logos{ display:flex; align-items:center; gap:1.1rem; }
+.barra__logos img{ height:26px; width:auto; }
+
+/* ---------- portada ---------- */
+
+.portada{
+  background: var(--banda-violeta);
+  color:#F6F3FB;
+  padding: clamp(3rem, 10vw, 6.5rem) 0 clamp(3.5rem, 10vw, 6rem);
+  position:relative;
+  overflow:hidden;
+}
+.portada::after{
+  content:"";
+  position:absolute; inset:auto -14vw -46vw auto;
+  width:76vw; height:76vw; max-width:660px; max-height:660px;
+  border-radius:50%;
+  background: radial-gradient(circle at 34% 30%, rgba(230,144,85,.34), rgba(230,144,85,0) 66%);
+  pointer-events:none;
+}
+.portada__int{ position:relative; z-index:1; }
+
+.portada__eyebrow{
+  font-family: var(--dato); font-weight:700;
+  font-size:.82rem; letter-spacing:.18em; text-transform:uppercase;
+  color:#E69055; margin:0 0 1.4rem;
+}
+.portada h1{
+  font-size: var(--t-display);
+  max-width:16ch;
+  margin:0 0 1.5rem;
+}
+.portada h1 em{
+  font-style:normal;
+  color:#E69055;
+}
+.portada__bajada{
+  font-size: var(--t-lead);
+  font-weight:500;
+  max-width:34rem;
+  color:#DDD3EE;
+  margin:0 0 2.2rem;
+}
+
+.fichas{ display:flex; flex-wrap:wrap; gap:.6rem; list-style:none; padding:0; margin:0; }
+.fichas li{
+  font-family: var(--dato); font-weight:600;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
+  padding:.42rem .85rem;
+  border:1.5px solid rgba(246,243,251,.34);
+  border-radius:999px;
+  white-space:nowrap;
+}
+.fichas li:first-child{
+  background:#E69055; border-color:#E69055; color:#2C1D45;
+}
+
+/* ---------- cadena de origen (1-2-3) ---------- */
+
+.cadena{ list-style:none; margin:2.6rem 0 0; padding:0; display:grid; gap:1.6rem; }
+@media (min-width:52rem){ .cadena{ grid-template-columns:repeat(3,1fr); gap:2rem; } }
+
+.cadena li{
+  display:grid; grid-template-columns:auto 1fr; gap:0 1rem;
+  align-items:start;
+  padding-top:1.15rem;
+  border-top:3px solid var(--linea);
+}
+.cadena li:nth-child(1){ border-top-color: var(--naranja); }
+.cadena li:nth-child(2){ border-top-color: var(--violeta); }
+.cadena li:nth-child(3){ border-top-color: var(--azul); }
+
+.cadena__n{
+  font-family: var(--dato); font-weight:700;
+  font-size:2.1rem; line-height:1; font-variant-numeric:tabular-nums;
+  color: var(--naranja);
+  grid-row:span 2;
+}
+.cadena h3{ align-self:center; }
+.cadena p{ grid-column:2; margin-top:.45rem; color: var(--tinta-suave); font-size:1rem; }
+
+/* ---------- declaración grande ---------- */
+
+.declaracion{
+  display:grid; gap:1.4rem;
+  align-items:start;
+}
+@media (min-width:52rem){
+  .declaracion{ grid-template-columns: minmax(0,7rem) minmax(0,1fr); gap:2.5rem; }
+}
+.declaracion__cifra{
+  font-family: var(--dato); font-weight:700;
+  font-size: clamp(3.6rem, 13vw, 6rem);
+  line-height:.85;
+  color: var(--naranja-viva);
+  font-variant-numeric:tabular-nums;
+}
+.declaracion__cifra span{
+  display:block;
+  font-size:.9rem; letter-spacing:.16em; text-transform:uppercase;
+  color: var(--sobre-suave);
+  margin-top:.55rem;
+}
+.declaracion__texto{ font-size: var(--t-lead); font-weight:500; max-width:36rem; }
+
+/* ---------- módulos del cuestionario ---------- */
+
+.modulos{ list-style:none; margin:2.6rem 0 0; padding:0; display:grid; gap:.6rem; }
+
+.modulo{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:.15rem 1.1rem;
+  align-items:baseline;
+  padding:1.15rem 1.25rem;
+  background: var(--superficie);
+  border-left:5px solid var(--violeta);
+  box-shadow: var(--sombra);
+}
+.modulo:nth-child(2){ border-left-color: var(--azul); }
+.modulo:nth-child(3){ border-left-color: var(--fiordo); }
+.modulo:nth-child(4){ border-left-color: var(--naranja); }
+.modulo:nth-child(5){ border-left-color: var(--violeta); }
+.modulo:nth-child(6){ border-left-color: var(--naranja-viva); }
+
+.modulo__cod{
+  font-family: var(--dato); font-weight:700;
+  font-size:.9rem; letter-spacing:.1em;
+  color: var(--tinta-suave);
+  font-variant-numeric:tabular-nums;
+}
+.modulo p{
+  grid-column:2; color: var(--tinta-suave); font-size:1rem; margin-top:.3rem;
+}
+
+/* ---------- cómo se responde ---------- */
+
+.pasos{ list-style:none; margin:2.6rem 0 0; padding:0; display:grid; gap:1.5rem; }
+@media (min-width:44rem){ .pasos{ grid-template-columns:repeat(2,1fr); gap:2rem 2.5rem; } }
+
+.pasos li{
+  padding-left:1.15rem;
+  border-left:2px solid var(--sobre-linea);
+}
+.pasos h3{ margin-bottom:.4rem; }
+.pasos p{ color: var(--sobre-suave); font-size:1rem; }
+
+/* ---------- derechos ---------- */
+
+.derechos{ list-style:none; margin:2.4rem 0 0; padding:0; display:grid; gap:.85rem; }
+@media (min-width:44rem){ .derechos{ grid-template-columns:repeat(2,1fr); gap:1rem 1.5rem; } }
+
+.derechos li{
+  display:grid; grid-template-columns:auto 1fr; gap:.9rem; align-items:start;
+  padding:1rem 1.15rem;
+  background: rgba(246,243,251,.08);
+  border:1px solid var(--sobre-linea);
+}
+.derechos li strong{ font-weight:800; }
+.derechos li span:last-child{ font-size:1rem; }
+.marca-si{
+  width:1.45rem; height:1.45rem; flex:none;
+  border-radius:50%;
+  background:#E69055;
+  color:#3B2757;
+  font-family: var(--dato); font-weight:700; font-size:1rem;
+  display:grid; place-items:center; line-height:1;
+  margin-top:.15rem;
+}
+
+/* ---------- quiénes ---------- */
+
+.actores{ list-style:none; margin:2.6rem 0 0; padding:0; display:grid; gap:1.4rem; }
+@media (min-width:52rem){ .actores{ grid-template-columns:repeat(3,1fr); gap:2rem; } }
+.actores li{ display:flex; flex-direction:column; gap:.5rem; }
+.actores .rotulo{ margin:0; }
+.actores p{ color: var(--tinta-suave); font-size:1rem; }
+
+.nota-ley{
+  margin-top:2.6rem;
+  padding:1.4rem 1.5rem;
+  background: var(--superficie);
+  border-top:3px solid var(--azul);
+  box-shadow: var(--sombra);
+  max-width:44rem;
+}
+.nota-ley p{ font-size:1rem; color: var(--tinta-suave); }
+.nota-ley p + p{ margin-top:.7rem; }
+.nota-ley strong{ color: var(--tinta); font-weight:600; }
+
+/* ---------- línea de tiempo ---------- */
+
+.tiempo{ list-style:none; margin:2.6rem 0 0; padding:0 0 0 1.6rem; position:relative; }
+.tiempo::before{
+  content:""; position:absolute; left:.34rem; top:.55rem; bottom:.55rem;
+  width:2px; background: var(--linea);
+}
+.tiempo li{
+  position:relative;
+  padding:0 0 1.9rem 0;
+  display:grid; gap:.15rem;
+}
+.tiempo li:last-child{ padding-bottom:0; }
+.tiempo li::before{
+  content:""; position:absolute; left:-1.6rem; top:.5rem;
+  width:.8rem; height:.8rem; border-radius:50%;
+  background: var(--violeta);
+  box-shadow:0 0 0 4px var(--papel);
+}
+.tiempo li.pendiente::before{
+  background: var(--papel);
+  border:2.5px solid var(--naranja);
+}
+.tiempo__fecha{
+  font-family: var(--dato); font-weight:700;
+  font-size:.82rem; letter-spacing:.14em; text-transform:uppercase;
+  color: var(--naranja);
+  font-variant-numeric:tabular-nums;
+}
+.tiempo h3{ font-size:1.05rem; }
+.tiempo p{ color: var(--tinta-suave); font-size:1rem; margin-top:.2rem; }
+
+/* ---------- pie ---------- */
+
+.pie{
+  background: var(--banda-violeta);
+  color:#F6F3FB;
+  padding: clamp(2.75rem, 7vw, 4rem) 0 2.5rem;
+}
+.pie__logos{
+  display:flex; flex-wrap:wrap; align-items:center; gap:2rem;
+  padding-bottom:1.9rem; margin-bottom:1.9rem;
+  border-bottom:1px solid rgba(246,243,251,.2);
+}
+.pie__logos img{ height:42px; width:auto; }
+.pie p{ font-size:.95rem; color:#CFC3E6; max-width:40rem; }
+.pie p + p{ margin-top:.7rem; }
+.pie a{ color:#E69055; }
+.pie__legal{
+  margin-top:1.9rem; font-family: var(--dato); font-weight:600;
+  font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:#A796C4;
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="barra__int">
+    <span class="barra__marca">Encuesta CIAN · Puerto Natales</span>
+    <span class="barra__logos">
+      <img src="assets/logo_uer_blanco.png" alt="Unidad de Estudios Regionales">
+      <img src="assets/logo_umag_blanco.png" alt="Universidad de Magallanes">
+    </span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PORTADA ============ -->
+  <section class="portada">
+    <div class="envoltura portada__int">
+      <p class="portada__eyebrow">Consejo Consultivo de Niños, Niñas y Adolescentes</p>
+      <h1>Esta encuesta <em>la pidieron ustedes</em>.</h1>
+      <p class="portada__bajada">
+        El CIAN quería saber qué necesitan y qué prefieren los niños, niñas y adolescentes
+        de Puerto Natales. Así que estamos construyendo una encuesta para preguntárselo
+        a toda la comuna.
+      </p>
+      <ul class="fichas">
+        <li>10 a 17 años</li>
+        <li>Puerto Natales</li>
+        <li>Toma unos 10 minutos</li>
+        <li>Es anónima</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DE DÓNDE VIENE ============ -->
+  <section class="franja">
+    <div class="envoltura">
+      <p class="rotulo">De dónde viene</p>
+      <div class="prosa prosa--ancha">
+        <h2>No la inventó una oficina. La pidió el Consejo.</h2>
+        <p class="tenue">
+          El CIAN es el Consejo Consultivo Comunal de Niños, Niñas y Adolescentes de
+          Natales. En sus reuniones apareció una necesidad clara: nadie había preguntado
+          en serio qué piensan los NNA de la comuna. De ahí salió la idea de hacer una
+          encuesta, y de ahí en adelante todo lo demás es apoyo para que esa idea
+          funcione bien.
+        </p>
+      </div>
+
+      <ol class="cadena">
+        <li>
+          <span class="cadena__n">1</span>
+          <h3>El CIAN levanta la necesidad</h3>
+          <p>Los propios consejeros y consejeras plantean que hace falta preguntarle
+             a los NNA de Natales qué necesitan y qué prefieren.</p>
+        </li>
+        <li>
+          <span class="cadena__n">2</span>
+          <h3>La OLN lo formaliza</h3>
+          <p>La Oficina Local de la Niñez de Natales pide apoyo técnico por escrito
+             en el Oficio ORD. N° 14, del 24 de abril de 2026.</p>
+        </li>
+        <li>
+          <span class="cadena__n">3</span>
+          <h3>La UER acompaña</h3>
+          <p>La Unidad de Estudios Regionales de la UMAG ayuda con el método y con el
+             lenguaje. Los temas los define el CIAN, no la universidad.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PARA QUÉ SIRVE ============ -->
+  <section class="franja franja--violeta">
+    <div class="envoltura">
+      <p class="rotulo">Para qué sirve</p>
+      <div class="declaracion">
+        <p class="declaracion__cifra">10<span>minutos</span></p>
+        <p class="declaracion__texto">
+          Eso es lo que te va a tomar responderla. Con esos diez minutos, la comuna va a
+          tener por primera vez datos propios sobre lo que necesitan los niños, niñas y
+          adolescentes de Natales, y va a poder tomar decisiones a partir de eso en vez
+          de suponer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ TE VAMOS A PREGUNTAR ============ -->
+  <section class="franja">
+    <div class="envoltura">
+      <p class="rotulo">Qué te vamos a preguntar</p>
+      <div class="prosa prosa--ancha">
+        <h2>Cinco temas y una pregunta abierta al final.</h2>
+        <p class="tenue">
+          Esta es la estructura de la versión que el CIAN y la OLN están revisando ahora.
+          Todavía puede cambiar: para eso es la revisión.
+        </p>
+      </div>
+
+      <ul class="modulos">
+        <li class="modulo">
+          <span class="modulo__cod">M0</span>
+          <h3>Sobre ti</h3>
+          <p>Tu edad, tu curso y el sector de Natales donde vives. Nada que permita
+             identificarte.</p>
+        </li>
+        <li class="modulo">
+          <span class="modulo__cod">M1</span>
+          <h3>En qué usas tu tiempo</h3>
+          <p>Qué haces en un día normal, dentro y fuera del colegio.</p>
+        </li>
+        <li class="modulo">
+          <span class="modulo__cod">M2</span>
+          <h3>Qué te interesa</h3>
+          <p>Lo que te gusta hacer, lo que te gustaría hacer y lo que te lo impide.</p>
+        </li>
+        <li class="modulo">
+          <span class="modulo__cod">M3</span>
+          <h3>Cómo ves tu entorno</h3>
+          <p>Tu barrio, tu colegio, las redes sociales y las oportunidades de participar
+             y opinar en la comuna.</p>
+        </li>
+        <li class="modulo">
+          <span class="modulo__cod">M4</span>
+          <h3>Cómo te sientes</h3>
+          <p>Qué tan conforme estás con distintas partes de tu vida. Son preguntas
+             opcionales.</p>
+        </li>
+        <li class="modulo">
+          <span class="modulo__cod">Fin</span>
+          <h3>Tu propuesta</h3>
+          <p>Un espacio abierto para escribir algo que cambiarías en Natales. Sin
+             alternativas: lo que tú quieras poner.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO SE RESPONDE ============ -->
+  <section class="franja franja--fiordo">
+    <div class="envoltura">
+      <p class="rotulo">Cómo se responde</p>
+      <div class="prosa prosa--ancha">
+        <h2>En tu colegio, en una pantalla, tú solo o tú sola.</h2>
+      </div>
+
+      <ol class="pasos">
+        <li>
+          <h3>En un dispositivo</h3>
+          <p>Se responde en un celular, tablet o computador del establecimiento. No
+             necesitas crear una cuenta ni poner una clave.</p>
+        </li>
+        <li>
+          <h3>Una pregunta por pantalla</h3>
+          <p>Avanzas de a una, con una barra que te muestra cuánto llevas. Nada de
+             formularios largos con letra chica.</p>
+        </li>
+        <li>
+          <h3>Funciona sin internet</h3>
+          <p>Usamos KoboToolbox, que guarda tus respuestas en el dispositivo y las envía
+             después. Si se cae la señal, no pierdes nada.</p>
+        </li>
+        <li>
+          <h3>Con un adulto que acompaña</h3>
+          <p>Un profesor o asistente de la educación está en la sala por si algo falla o
+             no se entiende una pregunta. No lee tus respuestas ni te dice qué contestar.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ TUS DERECHOS ============ -->
+  <section class="franja franja--violeta">
+    <div class="envoltura">
+      <p class="rotulo">Tus derechos en esta encuesta</p>
+      <div class="prosa prosa--ancha">
+        <h2>Cinco cosas que valen siempre, y que nadie te puede quitar.</h2>
+      </div>
+
+      <ul class="derechos">
+        <li>
+          <span class="marca-si" aria-hidden="true">✓</span>
+          <span><strong>Es anónima.</strong> No se pide tu nombre ni tu RUT. Nadie puede
+          saber cuál respuesta es la tuya.</span>
+        </li>
+        <li>
+          <span class="marca-si" aria-hidden="true">✓</span>
+          <span><strong>Puedes decir que no.</strong> Lo primero que aparece es una
+          pregunta: ¿quieres participar? Si respondes que no, se cierra y no pasa
+          absolutamente nada.</span>
+        </li>
+        <li>
+          <span class="marca-si" aria-hidden="true">✓</span>
+          <span><strong>Puedes parar cuando quieras.</strong> No tienes que terminarla,
+          y tampoco tienes que responder todas las preguntas.</span>
+        </li>
+        <li>
+          <span class="marca-si" aria-hidden="true">✓</span>
+          <span><strong>No hay respuestas correctas.</strong> No es una prueba, no lleva
+          nota y no la revisa tu profesor.</span>
+        </li>
+        <li>
+          <span class="marca-si" aria-hidden="true">✓</span>
+          <span><strong>Tus respuestas no se muestran.</strong> Se publican solo los
+          resultados del conjunto, nunca lo que contestó una persona.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ QUIÉNES ============ -->
+  <section class="franja franja--papel2">
+    <div class="envoltura">
+      <p class="rotulo">Quiénes están detrás</p>
+      <div class="prosa prosa--ancha">
+        <h2>Tres partes, con roles distintos.</h2>
+      </div>
+
+      <ul class="actores">
+        <li>
+          <p class="rotulo">CIAN</p>
+          <h3>Consejo Consultivo de Niños, Niñas y Adolescentes de Natales</h3>
+          <p>Pidió la encuesta y define de qué se pregunta.</p>
+        </li>
+        <li>
+          <p class="rotulo">OLN Natales</p>
+          <h3>Oficina Local de la Niñez, I. Municipalidad de Natales</h3>
+          <p>Coordina con los establecimientos y hace que la encuesta llegue a la comuna.</p>
+        </li>
+        <li>
+          <p class="rotulo">UER · UMAG</p>
+          <h3>Unidad de Estudios Regionales, Universidad de Magallanes</h3>
+          <p>Aporta el método: cómo se pregunta, cómo se aplica y cómo se analiza.</p>
+        </li>
+      </ul>
+
+      <div class="nota-ley">
+        <p><strong>Esto no es un favor: es un derecho.</strong> La
+        <strong>Ley N° 21.430</strong>, de Garantías y Protección Integral de los Derechos
+        de la Niñez y Adolescencia, dice que los NNA tienen derecho a opinar sobre las
+        decisiones que los afectan, y que escucharlos es tarea del Estado, de los
+        municipios y de la comunidad entera.</p>
+        <p>El <strong>Decreto N° 12</strong> agrega que el Consejo Consultivo debe
+        pronunciarse sobre las materias que afecten los derechos de los NNA de la comuna.
+        Esta encuesta es una de las formas de hacerlo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EN QUÉ VAMOS ============ -->
+  <section class="franja">
+    <div class="envoltura">
+      <p class="rotulo">En qué vamos</p>
+      <div class="prosa prosa--ancha">
+        <h2>El estado del trabajo, paso a paso.</h2>
+      </div>
+
+      <ol class="tiempo">
+        <li>
+          <span class="tiempo__fecha">24 abr 2026</span>
+          <h3>La OLN pide apoyo a la UMAG</h3>
+          <p>Oficio ORD. N° 14, firmado por la coordinadora de la Oficina Local de la
+             Niñez de Natales.</p>
+        </li>
+        <li>
+          <span class="tiempo__fecha">8 may 2026</span>
+          <h3>Primera reunión con el CIAN</h3>
+          <p>En la Sala del Concejo Municipal. Se trabajó qué es una encuesta de opinión
+             y qué temas quería incluir el Consejo.</p>
+        </li>
+        <li>
+          <span class="tiempo__fecha">5 jun 2026</span>
+          <h3>Revisión de encuestas de otros países</h3>
+          <p>Se estudiaron 17 instrumentos nacionales e internacionales para no partir
+             de cero y para poder comparar resultados.</p>
+        </li>
+        <li>
+          <span class="tiempo__fecha">9 sep 2026</span>
+          <h3>Primera versión completa</h3>
+          <p>El cuestionario queda listo para que el CIAN y la OLN lo revisen y pidan
+             cambios.</p>
+        </li>
+        <li class="pendiente">
+          <span class="tiempo__fecha">Próximo</span>
+          <h3>Prueba con un grupo pequeño</h3>
+          <p>Entre 5 y 10 NNA responden la encuesta antes que nadie, para detectar
+             preguntas confusas o demasiado largas.</p>
+        </li>
+        <li class="pendiente">
+          <span class="tiempo__fecha">Por definir</span>
+          <h3>Aplicación en los establecimientos</h3>
+          <p>La fecha se acuerda entre la OLN y los colegios de Natales.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie__logos">
+      <img src="assets/logo_uer_blanco.png" alt="Unidad de Estudios Regionales — UMAG">
+      <img src="assets/logo_umag_blanco.png" alt="Universidad de Magallanes">
+    </div>
+    <p>
+      <strong>Encuesta CIAN</strong> — Consejo Consultivo Comunal de Niños, Niñas y
+      Adolescentes de Puerto Natales, Oficina Local de la Niñez de la I. Municipalidad de
+      Natales y Unidad de Estudios Regionales de la Universidad de Magallanes.
+    </p>
+    <p>
+      ¿Tienes una duda o una idea para la encuesta? Habla con el CIAN o escribe a la
+      Oficina Local de la Niñez de Natales.
+    </p>
+    <p class="pie__legal">
+      Documento de trabajo · El cuestionario está en revisión · Actualizado en septiembre de 2026
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
