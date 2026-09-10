@@ -10,9 +10,16 @@ cuáles son los derechos de quien la contesta.
 
 | Actor | Rol |
 | --- | --- |
-| **CIAN** — Consejo Consultivo Comunal de Niños, Niñas y Adolescentes de Natales | Levantó la necesidad de la encuesta y define las temáticas. |
-| **OLN Natales** — Oficina Local de la Niñez, I. Municipalidad de Natales | Solicitante (Oficio ORD. N° 14, 24 de abril de 2026). Coordina la articulación territorial. |
-| **UER — UMAG** — Unidad de Estudios Regionales, Universidad de Magallanes | Apoyo técnico-metodológico. |
+| **CIAN** — Consejo Consultivo Comunal de Infancia y Adolescencia de Natales | Levantó la necesidad de la encuesta y define las temáticas. |
+| **OLN Natales** — Oficina Local de la Niñez, I. Municipalidad de Natales | Conduce la iniciativa. Formalizó la solicitud de apoyo técnico (Oficio ORD. N° 14, 24 de abril de 2026) y coordina con los establecimientos. |
+| **UER — UMAG** — Unidad de Estudios Regionales, Universidad de Magallanes | Acompañamiento metodológico: cómo preguntar, no qué preguntar. |
+
+El protagonismo visual de la página corresponde a la **OLN** y al **CIAN**. La UER aparece
+en el pie, identificada por su rol de acompañamiento.
+
+**Contacto de la OLN** (fuente: <https://portal.muninatales.cl/oln/>): Angamos 650,
+Puerto Natales, Pueblo Artesanal, Edificio OMIL · +56 9 3463 8651 (también WhatsApp) ·
+oln@muninatales.cl · lunes a jueves 8:00–17:00 continuado, viernes 8:00–16:00.
 
 Marco normativo: Ley N° 21.430 de Garantías y Protección Integral de los Derechos de la
 Niñez y Adolescencia, y Decreto N° 12.
@@ -21,7 +28,7 @@ Niñez y Adolescencia, y Decreto N° 12.
 
 ```
 index.html      # la página completa, con el CSS embebido
-assets/         # logos UER y UMAG (versiones color y blanco)
+assets/         # logos OLN, I. Municipalidad de Natales, UER y UMAG
 .nojekyll       # sirve los archivos tal cual, sin procesamiento Jekyll
 ```
 
@@ -29,8 +36,9 @@ Sin dependencias ni build. La única carga externa es la tipografía **Asap** (o
 desde Google Fonts; sin conexión la página cae a una tipografía de sistema y sigue siendo
 legible.
 
-Paleta según el *Breve Manual de Normas Gráficas UMAG*: azul `#4A5CAB`, violeta `#593D80`,
-con el naranja `#E69055` de la UER como acento.
+Paleta tomada de los propios logotipos institucionales: azul OLN `#3C6CB4`, celeste
+`#30A8D8` y navy `#242454`; magenta `#E4186C`, teal `#0C9C90` y amarillo `#FCC018` de la
+marca municipal. El violeta UMAG `#593D80` queda reservado a la mención de la UER.
 
 ## Trabajar en el sitio
 
@@ -49,6 +57,9 @@ compartida de Drive `UMAG/01_Proyectos/OLN-Natales/`:
 | --- | --- |
 | De dónde viene, actores, marco legal, hitos | `CLAUDE.md` |
 | Módulos M0–M4 y pregunta de cierre | `Cuestionario_Final/CLAUDE.md` |
+| Objetivo general y específicos, tramos y versiones | `Presentacion_EncuestaCIAN.pptx` |
+| 16 instrumentos revisados (7 chilenos, 9 internacionales) | `Presentacion_EncuestaCIAN.pptx` |
+| Qué es la OLN, qué es el CIAN, contacto y ubicación | portal.muninatales.cl/oln/ |
 | Cómo se responde | `metodo_cuestionario.md` §§2, 5 |
 | Tus derechos | `metodo_cuestionario.md` §4 y `manual_supervisor.md` |
 
