@@ -63,14 +63,15 @@ compartida de Drive `UMAG/01_Proyectos/OLN-Natales/`:
 | Cómo se responde | `metodo_cuestionario.md` §§2, 5 |
 | Tus derechos | `metodo_cuestionario.md` §4 y `manual_supervisor.md` |
 
-## Pendiente antes de difundir
+## Duración declarada
 
-La página declara que la encuesta **toma unos 10 minutos**, cifra que **no coincide** con la
-documentación metodológica: `metodo_cuestionario.md` §3 estima 15–20 min para el tramo
-10–13 y 25–30 min para el 14–17, y el instrumento vigente tiene 24 preguntas que hoy ven
-ambos tramos, porque la ramificación por `tramo` aún no está implementada.
+La página declara **10 a 15 minutos**, cifra acordada el 2026-09-09 y aplicada también a
+la pantalla de presentación del cuestionario (DOCX, XLSForm y Markdown) y al guion del
+manual del supervisor. Los tres artefactos de comunicación dicen ahora lo mismo.
 
-Hay que alinear las tres cifras que circulan (esta página, el guion del manual del
-supervisor y la metodología) antes de que el sitio se difunda a los establecimientos.
-Se resuelve acortando el instrumento para el tramo menor o ajustando la cifra tras el
-piloto de 5–10 NNA.
+Queda una brecha abierta con la estimación técnica: `metodo_cuestionario.md` §3 estima
+15–20 min para el tramo 10–13 y 25–30 min para el 14–17, y el instrumento vigente presenta
+24 preguntas a ambos tramos porque la ramificación por `tramo` no está implementada
+(pendientes 1 y 2 de `Cuestionario_Final/CLAUDE.md`). Se cierra reduciendo preguntas para
+el tramo menor, no estirando el tiempo. El piloto con 5–10 NNA confirma la cifra final; si
+supera los 15 minutos, hay que corregir esta página, el cuestionario y el manual.
